@@ -6,6 +6,7 @@
 /* exit() use this. */
 #include <stdlib.h>
 
+__BEGIN_DECLS
 #define C4MK_LOG_DEBUG (0)
 #define C4MK_LOG_INFO (1)
 #define C4MK_LOG_WARN (2)
@@ -54,4 +55,5 @@
 void
 c4mk_log_printf(int, const char *, int, const char *, ...);
 
+__END_DECLS
 #endif
