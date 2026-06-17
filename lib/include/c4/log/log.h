@@ -1,7 +1,11 @@
 #ifndef _C4_LOG__LOG_H_
 #define _C4_LOG__LOG_H_
 
+#include <c4/base/cdefs.h>
+
 #include <stdarg.h>
+
+__BEGIN_DECLS
 
 enum C4_LOG_LEVEL {
         C4_LOG_LEVEL__DEBUG,
@@ -30,4 +34,5 @@ c4_log_warn(const char *, ...);
 void
 c4_log_errx(int, const char *, ...);
 
+__END_DECLS
 #endif
