@@ -11,17 +11,17 @@ void (*g_c4_log_cb)(enum C4_LOG_LEVEL, const char *, va_list) = NULL;
 
 #define TIME_STR_BUFSIZE (128)
 
-#define __DO_LOG(level)                                                        \
-        va_list vl;                                                            \
-                                                                               \
-        if (g_c4_log_level <= (level)) {                                       \
-                va_start(vl, fmt);                                             \
-                if (g_c4_log_cb == NULL) {                                     \
-                        _vlog((level), fmt, vl);                               \
-                } else {                                                       \
-                        g_c4_log_cb((level), fmt, vl);                         \
-                }                                                              \
-                va_end(vl);                                                    \
+#define __DO_LOG(level)                                              \
+        va_list vl;                                                  \
+                                                                     \
+        if (g_c4_log_level <= (level)) {                             \
+                va_start(vl, fmt);                                   \
+                if (g_c4_log_cb == NULL) {                           \
+                        _vlog((level), fmt, vl);                     \
+                } else {                                             \
+                        g_c4_log_cb((level), fmt, vl);               \
+                }                                                    \
+                va_end(vl);                                          \
         }
 
 static void

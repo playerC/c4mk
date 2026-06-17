@@ -1,0 +1,32 @@
+BasedOnStyle: LLVM 
+UseTab:          Never    
+TabWidth:        8                 
+IndentWidth:     8                 
+ContinuationIndentWidth: 4         
+ColumnLimit: 70
+
+BreakBeforeBraces: Linux           
+IndentCaseLabels: false              
+
+SpaceAfterCStyleCast: false  
+SpaceBeforeParens: ControlStatements
+SpacesInParentheses: false          
+SpacesInSquareBrackets: false       
+PointerAlignment: Right             
+
+AllowShortFunctionsOnASingleLine: true  
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Never
+BinPackArguments: true              
+BinPackParameters: true
+AlignTrailingComments: true         
+MaxEmptyLinesToKeep: 1              
+
+SortIncludes:    CaseSensitive  
+IncludeBlocks:   Preserve       
+
+DerivePointerAlignment: false   
+ReflowComments:  true           
+
+AlwaysBreakAfterReturnType: All
