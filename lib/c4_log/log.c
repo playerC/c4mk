@@ -94,7 +94,7 @@ c4_log_warn(const char *fmt, ...)
         __DO_LOG(C4_LOG_LEVEL__WARN);
 }
 
-void
+__dead void
 c4_log_errx(int code, const char *fmt, ...)
 {
         __DO_LOG(C4_LOG_LEVEL__ERRX);

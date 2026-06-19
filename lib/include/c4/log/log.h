@@ -31,7 +31,7 @@ c4_log_info(const char *, ...);
 void
 c4_log_warn(const char *, ...);
 
-void
+__dead void
 c4_log_errx(int, const char *, ...);
 
 __END_DECLS
