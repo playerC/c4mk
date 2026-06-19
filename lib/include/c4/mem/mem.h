@@ -12,6 +12,7 @@ struct c4_mem_cfg {
         void *(*calloc_cb)(size_t, size_t);
         void *(*realloc_cb)(void *, size_t);
         void (*free_cb)(void *);
+        void (*tag_cb)(void *, const char *, int);
 };
 
 void
@@ -35,6 +36,15 @@ c4_mem_free(void *);
                 mem = NULL;                                          \
         } while (0)
 
+void
+__c4_mem_tag(void *, const char *, int);
+
+#ifdef NDEBUG
+#define c4_mem_tag(mem)
+#else
+#define c4_mem_tag(mem) __c4_mem_tag((mem), __FILE__, __LINE__)
+#endif
+
 void *
 c4_mem_alloc_zero(size_t);
 
@@ -43,6 +53,12 @@ c4_mem_realloc_mask(void *, size_t, size_t);
 
 void
 c4_mem_free_mask(void *, size_t);
+
+#define c4_mem_free_mask_null(mem)                                   \
+        do {                                                         \
+                c4_mem_free_mask(mem);                               \
+                mem = NULL;                                          \
+        } while (0)
 
 __END_DECLS
 
