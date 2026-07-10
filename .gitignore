@@ -56,7 +56,6 @@ dkms.conf
 
 # Clang files
 .clangd
-.clang-format
 
 # Build dir
 _build/
